@@ -1,0 +1,10 @@
+0 bar
+1 dot
+2 heart
+3 marquise
+4 oval
+5 pear
+6 round
+7 square
+8 triangle
+9 uncut
