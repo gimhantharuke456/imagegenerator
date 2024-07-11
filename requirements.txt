@@ -1,0 +1,9 @@
+Flask
+flask-cors
+numpy
+pillow
+requests
+tensorflow
+openai
+google-generativeai
+logging
