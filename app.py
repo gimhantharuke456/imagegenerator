@@ -10,7 +10,7 @@ import google.generativeai as genai
 import pathlib
 import os
 from datetime import datetime
-import logging
+
 
 api_key = "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"
 gemini_key = "AIzaSyBBH-xlLo8IeAyQoIKMMmkyVAHPze9nMvU"
@@ -24,8 +24,7 @@ warnings.filterwarnings("ignore")
 app = Flask(__name__)
 CORS(app, resources={r"/*": {"origins": "*"}}, supports_credentials=True)
 
-logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger(__name__)
+
 
 # Load the TensorFlow Lite model
 interpreter = tf.lite.Interpreter(model_path="model.tflite")
@@ -164,15 +163,7 @@ def get_image(filename):
     return send_from_directory(save_dir, filename)
 
 
-@app.before_request
-def log_request_info():
-    logger.info('Request: %s %s %s', request.method, request.url, dict(request.headers))
 
-# Add this function to log responses
-@app.after_request
-def log_response_info(response):
-    logger.info('Response: %s %s', response.status, response.headers)
-    return response
 
 if __name__ == '__main__':
     app.run(debug=True)

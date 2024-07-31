@@ -6,4 +6,3 @@ requests
 tensorflow
 openai
 google-generativeai
-logging
