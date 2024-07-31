@@ -6,3 +6,5 @@ requests
 tensorflow
 openai
 google-generativeai
+uvicorn
+asgiref

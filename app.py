@@ -168,4 +168,5 @@ def test():
     return jsonify({"message" : "hello"})
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    import uvicorn
+    uvicorn.run(asgi_app, host="0.0.0.0", port=8000)
