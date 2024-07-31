@@ -10,6 +10,7 @@ import google.generativeai as genai
 import pathlib
 import os
 from datetime import datetime
+from asgiref.wsgi import WsgiToAsgi
 
 
 api_key = "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"
@@ -23,7 +24,7 @@ warnings.filterwarnings("ignore")
 # Initialize Flask application
 app = Flask(__name__)
 CORS(app, resources={r"/*": {"origins": "*"}}, supports_credentials=True)
-
+asgi_app = WsgiToAsgi(app)
 
 
 # Load the TensorFlow Lite model
