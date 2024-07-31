@@ -163,7 +163,9 @@ def get_image(filename):
     return send_from_directory(save_dir, filename)
 
 
-
+@app.route("/")
+def test():
+    return jsonify({"message" : "hello"})
 
 if __name__ == '__main__':
     app.run(debug=True)
